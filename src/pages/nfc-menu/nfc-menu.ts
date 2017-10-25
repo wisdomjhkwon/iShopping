@@ -18,6 +18,10 @@ export class NfcMenuPage {
 
 
   add(){
-    lalala
+    this.nfc.addNdefListener(this.callback)
+  }
+  
+  callback(){
+    console.log('addNdefListener Successed!')
   }
 }
