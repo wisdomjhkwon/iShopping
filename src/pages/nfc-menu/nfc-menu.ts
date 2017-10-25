@@ -16,4 +16,8 @@ export class NfcMenuPage {
     console.log('ionViewDidLoad NfcMenuPage');
   }
 
+
+  add(){
+    lalala
+  }
 }
