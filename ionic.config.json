@@ -1,5 +1,6 @@
 {
   "name": "iShopping",
-  "app_id": "",
-  "type": "ionic-angular"
+  "app_id": "a84db7a6",
+  "type": "ionic-angular",
+  "integrations": {}
 }
