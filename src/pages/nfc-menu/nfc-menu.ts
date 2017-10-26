@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Alert } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NFC, Ndef } from '@ionic-native/nfc';
 import { TagUtil, Tag } from './tag';
 import { StorageUtils } from './storageutils';
@@ -13,13 +13,14 @@ export class NfcMenuPage {
   showAnimation: boolean = false;
   tag: Tag;
 
-  constructor(public nav: NavController, public navParams: NavParams, private nfc: NFC, private ndef: Ndef, public alert: Alert) {
+  constructor(public nav: NavController, public navParams: NavParams, private nfc: NFC, private ndef: Ndef) {
     this.dataReceived = false;
     this.tag = new Tag();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NfcMenuPage');
+    this.addNfcListeners();
   }
 
   addNfcListeners(): void {
@@ -52,9 +53,11 @@ export class NfcMenuPage {
       tags.push(this.tag);
 
       StorageUtils.setTags(tags);
-
-
     }
-
   }
+
+  scanNewTag():void {
+    this.dataReceived = false;
+    this.showAnimation = false;
+}
 }
