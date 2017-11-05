@@ -7,11 +7,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { NFC, Ndef } from '@ionic-native/nfc';
+import { SucPage } from '../pages/suc/suc';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    SucPage
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,8 @@ import { NFC, Ndef } from '@ionic-native/nfc';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    SucPage
   ],
   providers: [
     StatusBar,

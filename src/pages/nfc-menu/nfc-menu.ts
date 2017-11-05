@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NFC, Ndef } from '@ionic-native/nfc';
 import { TagUtil, Tag } from './tag';
 import { StorageUtils } from './storageutils';
+import { SucPage } from '../suc/suc';
+
 @IonicPage()
 @Component({
   selector: 'page-nfc-menu',
@@ -31,7 +33,9 @@ export class NfcMenuPage {
   tagListenerSuccess(tagEvent: Event) {
     console.log(tagEvent);
     this.vibrate(2000);
+    this.nav.push(SucPage);
   }
+
   vibrate(time: number): void {
     if (navigator.vibrate) {
       navigator.vibrate(time);
@@ -56,8 +60,12 @@ export class NfcMenuPage {
     }
   }
 
-  scanNewTag():void {
+  scanNewTag(): void {
     this.dataReceived = false;
     this.showAnimation = false;
-}
+  }
+
+  nextP(){
+    this.nav.push(SucPage);
+  }
 }
